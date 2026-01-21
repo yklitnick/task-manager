@@ -1,4 +1,4 @@
-const { CustomAPIError } = require('../errors/custom-errors');
+import { CustomAPIError } from '../errors/custom-errors.js';
 
 const errorHandler = (err, req, res, next) => {
     if (err instanceof CustomAPIError) {
@@ -9,4 +9,4 @@ const errorHandler = (err, req, res, next) => {
         .json({ msg: 'Something went wrong, please try again' });
 };
 
-module.exports = errorHandler;
+export default errorHandler;
